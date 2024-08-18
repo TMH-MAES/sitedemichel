@@ -4,8 +4,7 @@
     box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
+body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
     background-color: #f4f4f4;
@@ -18,20 +17,15 @@ html, body {
     max-width: 1200px;
 }
 
-body {
-    display: flex;
-    flex-direction: column;
-}
-
 header {
     background-color: #34495e;
     padding: 20px 0;
+    text-align: center;
 }
 
 header .logo {
     font-size: 2.5rem;
     color: white;
-    text-align: center;
     font-weight: bold;
 }
 
@@ -58,87 +52,59 @@ header nav ul li a:hover {
 }
 
 main {
-    flex: 1;
-    padding: 60px 0;
+    padding: 40px 0;
+}
+
+.services {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.service {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    flex-basis: 23%; /* Pour avoir 4 services sur une ligne */
+    margin-bottom: 20px;
+    padding: 20px;
     text-align: center;
+    overflow: hidden;
+}
+
+.service img {
+    width: 100%;
+    height: 200px; /* Limite la hauteur des images */
+    object-fit: cover; /* Ajuste l'image pour éviter les distorsions */
+    border-radius: 10px 10px 0 0;
+}
+
+.service h3 {
+    margin: 20px 0 10px 0;
+    font-size: 1.4rem;
+    color: #34495e;
+}
+
+.service p {
+    color: #7f8c8d;
+}
+
+@media (max-width: 768px) {
+    .service {
+        flex-basis: 48%; /* 2 services par ligne sur les écrans plus petits */
+    }
+}
+
+@media (max-width: 480px) {
+    .service {
+        flex-basis: 100%; /* 1 service par ligne sur les petits écrans */
+    }
 }
 
 footer {
     background-color: #2c3e50;
     color: white;
-    padding: 40px 0;
-}
-
-footer .container {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-
-.footer-section {
-    width: 30%;
-    margin-bottom: 20px;
-}
-
-.footer-section h3 {
-    font-size: 1.4rem;
-    margin-bottom: 15px;
-    position: relative;
-    padding-bottom: 10px;
-}
-
-.footer-section h3::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    height: 2px;
-    width: 50px;
-    background-color: #e67e22;
-}
-
-.footer-section ul {
-    list-style: none;
-    padding: 0;
-}
-
-.footer-section ul li {
-    margin-bottom: 10px;
-}
-
-.footer-section ul li a {
-    color: #bdc3c7;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.footer-section ul li a:hover {
-    color: #e67e22;
-}
-
-.socials {
-    display: flex;
-}
-
-.socials li {
-    margin-right: 15px;
-}
-
-.socials li a {
-    color: white;
-    font-size: 1.2rem;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.socials li a:hover {
-    color: #e67e22;
-}
-
-.footer-bottom {
+    padding: 20px 0;
     text-align: center;
-    padding-top: 20px;
-    border-top: 1px solid #bdc3c7;
-    margin-top: 20px;
-    font-size: 0.9rem;
 }
