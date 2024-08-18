@@ -103,6 +103,7 @@ main {
 }
 
 .services .service {
+    widht : 400px;
     background-color: white;
     border: 1px solid #ddd;
     border-radius: 10px;
